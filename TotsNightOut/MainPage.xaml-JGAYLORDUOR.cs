@@ -36,7 +36,7 @@ namespace TotsNightOut
             //LocalListing.ItemsSource = new List<String> { "apples", "bananas" };
             //LocalListing.FindNam
             //LocalListingStackPanel.Background = App.CurrentAccentColor;
-
+            // http://stackoverflow.com/questions/2143331/databinding-using-the-static-resource-assigning-programatically-datagrid
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
@@ -71,6 +71,11 @@ namespace TotsNightOut
 
         private void LoadNearbyLocations()
         {
+            // http://wiki.openstreetmap.org/wiki/API_v0.6
+            // http://stackoverflow.com/questions/14707200/how-to-find-latitude-and-longitude-of-a-place-in-wp7
+            var currentDay = DateTime.Now.DayOfWeek + " Specials ";
+            StatusCrumbs.Text = currentDay;
+
             var listings = new NearbyLocations();
             LocalListing.ItemsSource = listings.Listing;
         }

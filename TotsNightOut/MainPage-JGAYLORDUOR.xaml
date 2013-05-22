@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -17,6 +18,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*"/>
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
@@ -25,12 +27,19 @@
             <Image x:Name="Logo" Source="/Assets/TotsNightOut-DarkBackground.png" Stretch="None" HorizontalAlignment="Left" />
         </StackPanel>
 
+        <TextBlock x:Name="StatusCrumbs" Grid.Row="1" Margin="10,0,10,10" FontSize="16" />
+
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
             <ListBox x:Name="LocalListing">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel ItemWidth="200" ItemHeight="200" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Height="200" Margin="10" Width="200" Background="Green">
+                        <StackPanel Height="200" Width="200" Margin="10" Background="Green">
                             <TextBlock FontSize="24" Margin="5" Width="190" TextWrapping="Wrap" Text="{Binding ChainName}" />
                             <TextBlock FontSize="16" Margin="5" Text="{Binding Distance, Converter={StaticResource DistanceConverter}}" />
                         </StackPanel>
@@ -54,7 +63,7 @@
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <UI:AdControl x:Name="MainPageAdvertisement" ApplicationId="659b13f9-a8ec-4806-8c21-c354ea1e522f" AdUnitId="10073069" />
         </Grid>
     </Grid>

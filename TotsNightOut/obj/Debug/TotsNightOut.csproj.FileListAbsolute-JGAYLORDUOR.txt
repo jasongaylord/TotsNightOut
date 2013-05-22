@@ -40,3 +40,5 @@ C:\My Files\SkyDrive\My Projects\Applications\TotsNightOut\TotsNightOut\Bin\Debu
 C:\My Files\SkyDrive\My Projects\Applications\TotsNightOut\TotsNightOut\Bin\Debug\Assets\TotsNightOut-LightBackground.png
 C:\My Files\SkyDrive\My Projects\Applications\TotsNightOut\TotsNightOut\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\My Files\SkyDrive\My Projects\Applications\TotsNightOut\TotsNightOut\obj\Debug\TotsNightOut.csprojResolveAssemblyReference.cache
+C:\My Files\SkyDrive\My Projects\Applications\TotsNightOut\TotsNightOut\Bin\Debug\TotsNightOut.dll.config
+C:\My Files\SkyDrive\My Projects\Applications\TotsNightOut\TotsNightOut\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
