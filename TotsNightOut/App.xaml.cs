@@ -10,6 +10,7 @@ using TotsNightOut.Resources;
 using Windows.UI;
 using System.Windows.Media;
 using TotsNightOut.Core.Common;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace TotsNightOut
 {
@@ -24,7 +25,7 @@ namespace TotsNightOut
         // Custom Variables
         //public static bool IsDarkTheme { get; private set; }
         //public static SolidColorBrush CurrentAccentColor { get; private set; }
-        //public static MobileServiceClient MobileService = new MobileServiceClient("https://totsnightout.azure-mobile.net/", "QWvnOnoeBRjmSzMDCLZpmPWQtKuyHG21");
+        public static MobileServiceClient MobileService;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -72,7 +73,7 @@ namespace TotsNightOut
             DetectTheme();
 
             // Initialize the Mobile Service Client
-            //MobileService = new MobileServiceClient("https://craftmug.azure-mobile.net/", "rSqkRpeiCMYRWgiSQrBECYlNqyArAQ84");
+            MobileService = new MobileServiceClient("https://totsnightout.azure-mobile.net/", "QWvnOnoeBRjmSzMDCLZpmPWQtKuyHG21");
         }
 
         // Code to execute when the application is activated (brought to foreground)

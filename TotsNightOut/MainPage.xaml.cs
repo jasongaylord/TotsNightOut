@@ -36,7 +36,7 @@ namespace TotsNightOut
             //LocalListing.ItemsSource = new List<String> { "apples", "bananas" };
             //LocalListing.FindNam
             //LocalListingStackPanel.Background = App.CurrentAccentColor;
-
+            
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
