@@ -70,7 +70,7 @@ namespace TotsNightOut
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            DetectTheme();
+            Theme.Detect();
 
             // Initialize the Mobile Service Client
             MobileService = new MobileServiceClient("https://totsnightout.azure-mobile.net/", "QWvnOnoeBRjmSzMDCLZpmPWQtKuyHG21");
@@ -80,7 +80,7 @@ namespace TotsNightOut
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            DetectTheme();
+            Theme.Detect();
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -233,16 +233,5 @@ namespace TotsNightOut
                 throw;
             }
         }
-
-        private void DetectTheme()
-        {
-            // Determine what the theme background is
-            Visibility isVisible = (Visibility)Application.Current.Resources["PhoneLightThemeVisibility"];
-            Theme.IsDarkTheme = (System.Windows.Visibility.Visible != isVisible);
-
-            // Determine the theme foreground
-            Theme.Foreground = (SolidColorBrush)Application.Current.Resources["PhoneAccentBrush"];
-        }
-    
     }
 }

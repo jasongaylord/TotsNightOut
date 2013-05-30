@@ -30,15 +30,32 @@
             <ListBox x:Name="LocalListing">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Height="200" Margin="10" Width="200" Background="Green">
+                        <StackPanel x:Name="LocalListingItem" Height="200" Margin="10" Width="200"><!--{ Binding Distance, Converter={StaticResource ForegroundBrushConverter}}-->
                             <TextBlock FontSize="24" Margin="5" Width="190" TextWrapping="Wrap" Text="{Binding ChainName}" />
                             <TextBlock FontSize="16" Margin="5" Text="{Binding Distance, Converter={StaticResource DistanceConverter}}" />
                         </StackPanel>
-                    </DataTemplate>                    
+                    </DataTemplate>
                 </ListBox.ItemTemplate>
-
             </ListBox>
         </Grid>
+
+
+        <!--<DataTemplate>
+            <TextBlock Text="{Binding Path=SomeProperty}">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Style.Triggers>
+
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type  ListBoxItem}},Path=IsSelected}" Value="True">
+                                <Setter Property="Foreground" Value="Red"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </DataTemplate>-->
+
+
 
         <!--<StackPanel Background="{Binding status, Converter={StaticResource LighterBackgroundConverter}}" Height="200" Width="200">
                             <TextBlock FontSize="24" Margin="5" Width="190" TextWrapping="Wrap" Text="{Binding name}"/>

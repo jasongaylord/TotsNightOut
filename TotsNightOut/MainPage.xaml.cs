@@ -27,11 +27,8 @@ namespace TotsNightOut
         {
             InitializeComponent();
 
-            // Change images based on theme
-            if (!Theme.IsDarkTheme)
-            {
-                Logo.Source = new BitmapImage(new Uri("/Assets/TotsNightOut-LightBackground.png", UriKind.Relative));
-            }
+            // Set the logo
+            Logo.Source = new BitmapImage(Theme.LogoUri);
 
             //LocalListing.ItemsSource = new List<String> { "apples", "bananas" };
             //LocalListing.FindNam
